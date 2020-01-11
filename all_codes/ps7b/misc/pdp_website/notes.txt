@@ -1,0 +1,29 @@
+Author: Jonathan Phouminh
+Date: October 13, 2019
+Description: Remake Pi Delta Psi Fraternity Inc. Boulder Associate Chapter
+website
+Purpose: Get rid of old wix website and practice using html, javascript,
+bootstrap and css. Database will be implemented via postgresSQL.
+
+Contact:
+email: enjapdp@gmail.com
+work: 720 936 9977
+============================
+Program Specifications:
+============================
+	implemented with HTML and will be using CSS and BOOTSTRAP for
+styling purposes
+
+============================
+Version notes / Logs
+============================
+
+0.0 , October 13, 2019
+
+	Today what was handled included breaking down the pros and cons
+of the current website interface. Had help from brother to help decide what the new interface should look like and what to include and what not to include. Initial design sketch completed.
+	As far as coding for this goes, will most likely just create the html pages and make sure everything is linked together properly. Will most likely spend this session playing around with declaring bootstrap/javascript statements in separate files to make HTML code look cleaner.
+		Completed:
+			- set up all html pages that are ready to be edited
+			- set up seperate css files
+			- set up navigation task bar

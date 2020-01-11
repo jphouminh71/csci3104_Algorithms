@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[]{algorithmicx}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headsep}{36pt}
+\usepackage{tkz-berge}
+\usetikzlibrary{positioning, automata}
+
+\usepackage{hyperref}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\newcommand{\makenonemptybox}[2]{%
+%\par\nobreak\vspace{\ht\strutbox}\noindent
+\item[]
+\fbox{% added -2\fboxrule to specified width to avoid overfull hboxes
+% and removed the -2\fboxsep from height specification (image not updated)
+% because in MWE 2cm is should be height of contents excluding sep and frame
+\parbox[c][#1][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{
+  \hrule width \hsize height 0pt
+  #2
+ }%
+}%
+\par\vspace{\ht\strutbox}
+}
+\makeatother
+
+\begin{document}
+
+\lhead{{\bf CSCI 3104, Algorithms \\ Problem Set 8a (14 points)} }
+\rhead{Name: \fbox{\phantom{This is a really long name}} \\ ID: \fbox{\phantom{This is a student ID}} \\ {\bf Profs.\ Hoenigman \& Agrawal\\ Fall 2019, CU-Boulder}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\phantom{Test}
+
+\begin{small}
+\textit{Advice 1}:\ For every problem in this class, you must justify your answer:\ show how you arrived at it and why it is correct. If there are assumptions you need to make along the way, state those clearly.
+\vspace{-3mm} 
+
+\textit{Advice 2}:\ Verbal reasoning is typically insufficient for full credit. Instead, write a logical argument, in the style of a mathematical proof.\\
+\vspace{-3mm} 
+
+\textbf{Instructions for submitting your solution}:
+\vspace{-5mm} 
+
+\begin{itemize}
+	\item The solutions \textbf{should be typed} and we cannot accept hand-written solutions. \href{http://ece.uprm.edu/~caceros/latex/introduction.pdf}{Here's a short intro to Latex.}
+	\item You should submit your work through \href{https://www.gradescope.com/courses/59294}{\textbf{Gradescope}} only.
+	\item If you don't have an account on it, sign up for one using your CU email. You should have gotten an email to sign up. If your name based CU email doesn't work, try the identikey@colorado.edu version. 
+	\item Gradescope will only accept \textbf{.pdf} files (except for code files that should be submitted separately on Gradescope if a problem set has them) and \textbf{try to fit your work in the box provided}. 
+	\item You cannot submit a pdf which has less pages than what we provided you as Gradescope won't allow it. 
+\end{itemize}
+\vspace{-4mm} 
+\end{small}
+
+\hrulefill
+\pagebreak
+
+
+\begin{enumerate}
+\item (2 pts) If the arrays, $A=[12, 14, 23, 34]$ and $B=[11, 13, 22, 35]$ are merged, list the indices in $A$ and $B$ that are compared to each other. For example, $A[0], B[0]$ means that $A[0]$ is compared to $B[0]$.
+\begin{solution}
+
+\end{solution}
+
+\item (3 pts) Illustrate how to apply the QuickSelect algorithm to find the $k = 4$th smallest element in the given array: \texttt{A = [5, 3, 4, 9, 2, 8, 1, 7, 6]} by showing the recursion call tree.
+\begin{solution}
+
+\end{solution}
+\pagebreak
+\item (1 pt) Explain in 2-3 sentences the purpose of the Median of Medians algorithm.
+\begin{solution}
+
+\end{solution}
+
+\item (4 pts) Illustrate how to apply the Median of Medians algorithm (A Deterministic QuickSelect algorithm) to find the $4$th largest element in the following array: \texttt{A = [6, 10, 80, 18, 20, 82, 33, 35, 0, 31, 99, 22, 56, 3, 32, 73, 85, 29, 60, 68, 99, 23, 57, 72, 25]}.
+\begin{solution}
+
+\end{solution}
+\pagebreak
+\item (4 pts) In Tuesday's lecture, we saw how the peaked array algorithm can find the maximum element in an array with one peak. For example, $A=[15, 16, 17, 14, 12]$ is a peaked array.
+\begin{enumerate}[label=(\alph*)]
+\item (2 pts) Explain how the peaked array algorithm works in sub-linear time? 
+(You may use the recurrence relation to help with the explanation)
+\begin{solution}
+
+\end{solution}
+
+\item (2 pts) Re-write the peaked array algorithm to find a single valley in an array, such as $A=[56, 43, 32, 21, 23, 25, 57]$. The valley would be 21.
+\begin{solution}
+
+\end{solution}
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
+
+

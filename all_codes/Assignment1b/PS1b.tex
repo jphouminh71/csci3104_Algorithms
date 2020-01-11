@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[]{algorithmicx}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headsep}{36pt}
+
+\usepackage{hyperref}
+
+
+
+\newcommand{\makenonemptybox}[2]{%
+%\par\nobreak\vspace{\ht\strutbox}\noindent
+\item[]
+\fbox{% added -2\fboxrule to specified width to avoid overfull hboxes
+% and removed the -2\fboxsep from height specification (image not updated)
+% because in MWE 2cm is should be height of contents excluding sep and frame
+\parbox[c][#1][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{
+  \hrule width \hsize height 0pt
+  #2
+ }%
+}%
+\par\vspace{\ht\strutbox}
+}
+\makeatother
+
+\begin{document}
+
+\lhead{{\bf CSCI 3104, Algorithms \\ Problem Set 1b (44 points)} }
+\rhead{Name: \fbox{\phantom{This is a really long name}} \\ ID: \fbox{\phantom{This is a student ID}} \\ {\bf Profs.\ Hoenigman \& Agrawal\\ Fall 2019, CU-Boulder}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\phantom{Test}
+
+\begin{small}
+\textit{Advice 1}:\ For every problem in this class, you must justify your answer:\ show how you arrived at it and why it is correct. If there are assumptions you need to make along the way, state those clearly.
+
+\vspace{-3mm} 
+\textit{Advice 2}:\ Verbal reasoning is typically insufficient for full credit. Instead, write a logical argument, in the style of a mathematical proof.
+
+
+\textbf{Instructions for submitting your solution}:
+\vspace{-5mm} 
+
+\begin{itemize}
+	\item The solutions \textbf{should be typed} and we cannot accept hand-written solutions. \href{http://ece.uprm.edu/~caceros/latex/introduction.pdf}{Here's a short intro to Latex.}
+	\item You should submit your work through \href{https://www.gradescope.com/courses/59294}{\textbf{Gradescope}} only.
+	\item If you don't have an account on it, sign up for one using your CU email. You should have gotten an email to sign up. If your name based CU email doesn't work, try the identikey@colorado.edu version. 
+	\item Gradescope will only accept \textbf{.pdf} files (except for code files that should be submitted separately on Gradescope if a problem set has them) and \textbf{try to fit your work in the box provided}. 
+	\item You cannot submit a pdf which has less pages than what we provided you as Gradescope won't allow it. 
+\end{itemize}
+\vspace{-4mm} 
+\end{small}
+
+\hrulefill
+
+\begin{enumerate}
+
+\item {\itshape (34 pts total) Let $A = \langle a_{1}, a_{2}, \ldots, a_{n} \rangle$ be an array of numbers. Let's define a \textit{'flip'} as a pair of distinct indices $i, j \in \{ 1, 2, \ldots, n\}$ such that $i < j$ but $a_{i} > a_{j}$. That is, $a_{i}$ and $a_{j}$ are out of order.\\ For example - In the array A = [1, 3, 5, 2, 4, 6], (3, 2), (5, 2) and (5, 4) are the only flips i.e. the total number of flips is 3. (Note that in this example the indices are the same as the actual values)}
+\begin{enumerate}
+\item \label{2a} (8 pts) Write a Python code for an algorithm, which takes as input a positive integer n, \textbf{randomly shuffles an array of size n} with elements $[1, \ldots, n]$ and counts the total number of flips in the shuffled array.
+\\Also, run your code on a bunch of n values from $[2, 2^2, 2^3, .... 2^{20}]$ and present your result in a table with one column as the value of n and another as the number of flips. Alternatively, you can present your table in form of a labeled plot with the 2 columns forming the 2 axes.\\
+\\
+Note: The .py file should run for you to get points and name the file as \\ \texttt{Lastname-Firstname-MMDD-PSXi.pdf}. You need to submit the code via Canvas but the table or plot should be on the main .pdf.
+\makenonemptybox{5in}{Erase this before you answer - This space is NOT for the code but only for the table  or plot.}
+\pagebreak
+%\makenonemptybox{4in}{% answer goes here. Even when there is a box present, you can use more space by increasing the size of the box. If you do so, please use \pagebreak somewhere shortly after so that subsequent problems line up well
+%}
+
+\vskip 20pt
+\item \label{2b} (4 pts) At most, how many flips can $A$ contain in terms of the array size n? Hint: The code you wrote in (a) can help you find this. Explain your answer with a short statement.
+\makenonemptybox{2in}{}
+
+
+\pagebreak 
+\item \label{2c} (10 pts) We say that $A$ is sorted if $A$ has no flips. Design a sorting algorithm that, on each pass through $A$, examines
+each pair of consecutive elements. If a consecutive pair forms a flip, the algorithm swaps the elements (to fix the out of order pair). So, if your array A was [4,2,7,3,6,9,10], your first pass should swap 4 and 2, then compare (but not swap) 4 and 7, then swap 7 and 3, then swap 7 and 6, etc. Formulate pseudo-code for this algorithm, using nested for loops. \\
+\textbf{Hint:} After the first pass of the outer loop think about where the largest element would be. The second pass can then safely ignore the largest element because it's already in it's desired location. You should keep repeating the process for all elements not in their desired spot.
+\makenonemptybox{4in}{}
+\makenonemptybox{5.5in}{}
+\pagebreak
+
+\item \label{2d} (4 pts) Your algorithm has an inner loop and an outer loop. Provide the 'useful' loop invariant (LI) for the inner loop.You don't need to show the complete LI proof. 
+\makenonemptybox{3in}{}
+\pagebreak
+
+\item \label{2e} (8 pts) Assume that the inner loop works correctly. Using a loop-invariant proof for the outer loop, formally prove that your pseudo-code correctly sorts the given array. Be sure that your loop invariant and proof cover the initialization, maintenance, and termination conditions. 
+\makenonemptybox{6in}{}
+\pagebreak
+
+\end{enumerate}
+
+\pagebreak
+	\item {\itshape (6 pt)  If r is a real number not equal to 1, then for every n $\geq$ 0, \\ 
+	\[
+	\sum_{i=0}^{n} r^{i} = \frac{ (1 - r^{n+1})}{ (1 - r)}.
+	\]
+	
+	\noindent Rewrite the inductive hypothesis from Q3 on PS1a and provide the inductive step to complete the proof by induction. You can refer to Q3 on PS1a to recollect the first 2 steps.}
+% 	\item {\itshape (1 pt)  Prove by induction that for each $n \in \mathbb{Z}^{+}$, $(2n)! < 2^{2n} (n!)^{2}$.}
+	\makenonemptybox{5.5in}{}
+\pagebreak
+    \item {\itshape (4 pt)  Refer to Q2b on PS1a and finish the LI based proof with all the steps.}
+    \makenonemptybox{5in}{}
+	
+\end{enumerate}
+
+
+\end{document}
+
+

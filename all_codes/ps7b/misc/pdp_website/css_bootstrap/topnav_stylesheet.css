@@ -1,0 +1,32 @@
+.social_media{
+  
+}
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+
+/* text of all anchor tag links that are static */
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* text of all anchor tag links that are hovered over */
+.topnav a:hover {
+  color: grey;
+}
+
+/* active tab */
+.topnav a.active {  /* notice how they placed the tags, we are only accessing tags in this the top nav class that have class 'active' in tag 'a'? */
+  color:	crimson;  /* tomatoe red*/
+}
+
+/*!!! container behind the navigation bar, this might be a problem if we choose to use more fluid container types */
+.container-fluid {
+  background-color:black;
+}

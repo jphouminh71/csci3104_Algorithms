@@ -1,0 +1,190 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[]{algorithmicx}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headsep}{36pt}
+
+\usepackage{hyperref}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\newcommand{\makenonemptybox}[2]{%
+%\par\nobreak\vspace{\ht\strutbox}\noindent
+\item[]
+\fbox{% added -2\fboxrule to specified width to avoid overfull hboxes
+% and removed the -2\fboxsep from height specification (image not updated)
+% because in MWE 2cm is should be height of contents excluding sep and frame
+\parbox[c][#1][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{
+  \hrule width \hsize height 0pt
+  #2
+ }%
+}%
+\par\vspace{\ht\strutbox}
+}
+\makeatother
+
+\begin{document}
+
+\lhead{{\bf CSCI 3104, Algorithms \\ Problem Set 2b (51 points)} }
+\rhead{Name: \fbox{\phantom{This is a really long name}} \\ ID: \fbox{\phantom{This is a student ID}} \\ {\bf Profs.\ Hoenigman \& Agrawal\\ Fall 2019, CU-Boulder}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\phantom{Test}
+
+\begin{small}
+\textbf{Instructions for submitting your solution}:
+\vspace{-5mm} 
+
+\begin{itemize}
+	\item The solutions \textbf{should be typed} and we cannot accept hand-written solutions. \href{http://ece.uprm.edu/~caceros/latex/introduction.pdf}{Here's a short intro to Latex.}
+	\item You should submit your work through \href{https://www.gradescope.com/courses/59294}{\textbf{Gradescope}} only.
+	\item If you don't have an account on it, sign up for one using your CU email. You should have gotten an email to sign up. If your name based CU email doesn't work, try the identikey@colorado.edu version. 
+	\item Gradescope will only accept \textbf{.pdf} files (except for code files that should be submitted separately on Gradescope if a problem set has them) and \textbf{try to fit your work in the box provided}. 
+	\item You cannot submit a pdf which has less pages than what we provided you as Gradescope won't allow it. 
+	\item Verbal reasoning is typically insufficient for full credit. Instead, write a logical argument, in the style of a mathematical proof.
+	\item For every problem in this class, you must justify your answer:\ show how you arrived at it and why it is correct. If there are assumptions you need to make along the way, state those clearly.
+	
+	\item You may work with other students. However, \textbf{all solutions must be written independently and in your own words.} Referencing solutions of any sort is strictly prohibited. You must explicitly cite any sources, as well as any collaborators. 
+\end{itemize}
+\vspace{-4mm} 
+\end{small}
+
+\hrulefill
+
+\begin{enumerate}
+
+%\pagebreak
+%\item {\itshape (3 pts) Let $f(n) = 7^{n}$ and $g(n) = n!$. Determine which of the following relations \textbf{best} applies: $f(n) \in \mathcal{O}(g(n))$, $f(n) \in \Omega(g(n))$, or $f(n) \in \Theta(g(n))$. Clearly justify your answer.}
+%\makenonemptybox{5in}{}
+
+\pagebreak
+\item {\itshape (4 pts) Using L'Hopital's Rule, show that $\ln(n) \in \mathcal{O}(\sqrt{n}).$}
+\begin{solution}
+%Your solution goes here
+\end{solution}
+%\makenonemptybox{5in}{}
+
+\pagebreak
+\item {\itshape (6 pts) Let $f(n) = (n-3)!$ and $g(n) = 3^{5n}$. Determine which of the following relations \textbf{best} applies: $f(n) \in \mathcal{O}(g(n))$, $f(n) \in \Omega(g(n))$, or $f(n) \in \Theta(g(n))$. Clearly justify your answer. You may wish to refer to Michael's Calculus Review document on Canvas.}
+%\makenonemptybox{5in}{}
+\begin{solution}
+%Your solution goes here
+\end{solution}
+
+\pagebreak
+\item {\itshape (4 pts) Let $T(n) = 4T(n/5) + \log(n)$, where $T(n)$ is constant when $n \leq 2$. \textbf{Using the Master Theorem}, determine tight asymptotic bounds for $T(n)$. That is, use the Master Theorem to find a function $g(n)$ such that $T(n) \in \Theta(g(n)).$ Clearly show all your work.}
+%\makenonemptybox{5in}{}
+\begin{solution}
+%Your solution goes here
+\end{solution}
+
+
+\pagebreak
+\item {\itshape (6 pts) Let $T(n) = T(n-3) + T(3) + n$, where $T(n)$ is constant when $n \leq 3$. \textbf{Using unrolling}, determine tight asymptotic bounds for $T(n)$. That is, find a function $g(n)$ such that $T(n) \in \Theta(g(n)).$ Clearly show all your work.}
+\begin{solution}
+%Your solution goes here
+\end{solution}
+
+\pagebreak
+\item{\itshape (8 pts) Consider the following algorithm, which takes as input a string of nested parentheses and returns the number of layers in which the parentheses are nested. So for example, $``"$ has $0$ nested parentheses, while $((()))$ is nested $3$ layers deep. In contrast, $()()$ is \textbf{not} valid input. You may assume the algorithm receives only valid input. For the sake of simplicity, the string will be represented as an array of characters. \\
+
+\noindent Find a recurrence for the worst-case runtime complexity of this algorithm. Then \textbf{solve} your recurrence and get a tight bound on the worst-case runtime complexity.}
+\begin{verbatim}
+CountParens(A[0, ..., 2n-1]):
+    if A.length == 0:
+        return 0
+    return 1 + CountParens(A[1, ..., 2n-2])
+\end{verbatim}
+%\makenonemptybox{5in}{}
+\begin{solution}
+%Your solution goes here
+\end{solution}
+
+\pagebreak
+\item{\itshape (16 pts) For the given algorithm to find \textbf{min}, solve the following. \\
+
+\noindent You may assume the existence of a $\texttt{min}$ function taking $\mathcal{O}(1)$ time, which accepts at most three arguments and returns the smallest of the three.}
+\begin{verbatim}
+FindMin(A[0, ..., n-1]):
+     if A.length == 0:
+        return infinity
+     else if A.length == 1:
+         return A[0]
+     else if A.length == 2:
+        return min(A[0], A[1]) 
+     return min( FindMin(A[0, ..., floor(n/3)], 
+                 FindMin(A[floor(n/3) + 1, ..., floor(2n/3)],
+                 FindMin(A[floor(2n/3) + 1, ..., n-1])
+             )
+\end{verbatim}
+\begin{enumerate}[label=(\alph*)]
+\item (3pts) Find a recurrence for the worst-case runtime complexity of this algorithm.
+\begin{solution}
+%Your solution goes here
+\end{solution}
+\pagebreak
+
+\item (3 pts) Solve your recurrence \textbf{using the Master's Method} and get a tight bound on the worst-case runtime complexity.
+\begin{solution}
+%Your solution goes here
+\end{solution}
+\pagebreak
+
+\item (6 pts) Solve your recurrence \textbf{using the recurrence tree method} and get a tight bound on the worst-case runtime complexity. (It's ok to put an image of your hand drawn tree but label it neatly.)
+\begin{solution}
+%Your solution goes here
+\end{solution}
+\pagebreak
+
+\item (4 pts) Give a tight bound ($\Theta$ bound) on the number of {\tt return} calls this algorithm makes. Justify your answer.
+\begin{solution}
+%Your solution goes here
+\end{solution}
+\end{enumerate}
+%\pagebreak
+
+
+%\makenonemptybox{5in}{}
+
+
+
+\pagebreak
+\item {\itshape (7 pts) Consider the following algorithm that sorts an array.
+
+\noindent Express and provide the worst-case runtime complexity of this algorithm as a function of $n$, where $n$ represents the size of the array. Provide a tight bound on the worst-case runtime complexity.
+}
+\begin{verbatim}
+buffSort(A, size):
+    if size <= 1:
+        return
+    
+    buffSort(A, size-1)
+    
+    foo = Arr[size-1]
+    
+    for(index = size-2; index >= 0 AND A[index] > foo; index--)
+        A[index+1] = A[index]
+    
+    A[index+1] = foo
+\end{verbatim}
+
+\begin{solution}
+%Your solution goes here
+\end{solution}
+
+
+\end{enumerate}
+
+\end{document}
+
+

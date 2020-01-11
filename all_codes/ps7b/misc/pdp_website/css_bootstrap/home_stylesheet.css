@@ -1,0 +1,12 @@
+h1,h2{
+  color: black;
+}
+
+body {
+  background-color: white;
+}
+
+/* This is the styling for the top of the page  */
+.home_title{
+  margin-left: 50px;
+}

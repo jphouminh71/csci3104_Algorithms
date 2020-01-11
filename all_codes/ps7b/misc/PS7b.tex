@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{\baselineskip}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[]{algorithmicx}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headsep}{36pt}
+\usepackage{tkz-berge}
+\usetikzlibrary{positioning, automata}
+
+\usepackage{hyperref}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+
+\newcommand{\makenonemptybox}[2]{%
+%\par\nobreak\vspace{\ht\strutbox}\noindent
+\item[]
+\fbox{% added -2\fboxrule to specified width to avoid overfull hboxes
+% and removed the -2\fboxsep from height specification (image not updated)
+% because in MWE 2cm is should be height of contents excluding sep and frame
+\parbox[c][#1][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{
+  \hrule width \hsize height 0pt
+  #2
+ }%
+}%
+\par\vspace{\ht\strutbox}
+}
+\makeatother
+
+\begin{document}
+
+\lhead{{\bf CSCI 3104, Algorithms \\ Problem Set 7b (47 points + 10 pts extra credit)} }
+\rhead{Name: \fbox{\phantom{This is a really long name}} \\ ID: \fbox{\phantom{This is a student ID}} \\ {\bf Profs.\ Hoenigman \& Agrawal\\ Fall 2019, CU-Boulder}}
+\renewcommand{\headrulewidth}{0.5pt}
+
+\phantom{Test}
+
+\begin{small}
+\textit{Advice 1}:\ For every problem in this class, you must justify your answer:\ show how you arrived at it and why it is correct. If there are assumptions you need to make along the way, state those clearly.
+\vspace{-3mm} 
+
+\textit{Advice 2}:\ Verbal reasoning is typically insufficient for full credit. Instead, write a logical argument, in the style of a mathematical proof.\\
+\vspace{-3mm} 
+
+\textbf{Instructions for submitting your solution}:
+\vspace{-5mm} 
+
+\begin{itemize}
+	\item The solutions \textbf{should be typed} and we cannot accept hand-written solutions. \href{http://ece.uprm.edu/~caceros/latex/introduction.pdf}{Here's a short intro to Latex.}
+	\item You should submit your work through \href{https://www.gradescope.com/courses/59294}{\textbf{Gradescope}} only.
+	\item If you don't have an account on it, sign up for one using your CU email. You should have gotten an email to sign up. If your name based CU email doesn't work, try the identikey@colorado.edu version. 
+	\item Gradescope will only accept \textbf{.pdf} files (except for code files that should be submitted separately on Gradescope if a problem set has them) and \textbf{try to fit your work in the box provided}. 
+	\item You cannot submit a pdf which has less pages than what we provided you as Gradescope won't allow it. 
+\end{itemize}
+\vspace{-4mm} 
+\end{small}
+
+\hrulefill
+\pagebreak
+\\
+\textbf{Important:} This assignment has two (Q2, Q3) coding questions. 
+\begin{itemize}
+    \item You need to submit two python files, one for each question.
+    \item The .py file should run for you to get points and name the file as following - \\
+If Q2 asks for a python code, please submit it with the following naming convention - \texttt{Lastname-Firstname-PS7b-Q2.py}.
+\item You need to submit the code via Canvas but the table/plot/result should be on the main .pdf.
+\end{itemize}
+\pagebreak
+
+\begin{enumerate}
+\item (7 pts) Suppose that we modify the {\tt Partition} algorithm in QuickSort in such a way that on alternating levels of the recursion tree, {\tt Partition} either chooses the best possible pivot or the worst possible pivot. 
+\begin{enumerate}
+    \item (1 pt) What are the best possible and the worst possible pivots for Quicksort?
+\begin{solution}
+
+\end{solution}
+
+    \item (4 pts) Write down a recurrence relation for this version of QuickSort and give its asymptotic solution. 
+\begin{solution}
+
+\end{solution}
+    \item (2 pts) Provide a verbal explanation of how this {\tt Partition} algorithm affects the running time of QuickSort.
+\begin{solution}
+
+\end{solution}
+
+\end{enumerate}
+
+\pagebreak
+
+\item {\itshape (14 pts total)
+In PS1b, you were asked to count flips in a sorting algorithm with quadratic running time. The problem definition looked something like this:\\
+Let $A = \langle a_{1}, a_{2}, \ldots, a_{n} \rangle$ be an array of numbers. Let's define a \textit{'flip'} as a pair of distinct indices $i, j \in \{ 1, 2, \ldots, n\}$ such that $i < j$ but $a_{i} > a_{j}$. That is, $a_{i}$ and $a_{j}$ are out of order.\\ For example - In the array A = [1, 3, 5, 2, 4, 6], (3, 2), (5, 2) and (5, 4) are the only flips i.e. the total number of flips is 3. (Note that in this example the indices are the same as the actual values)}\\
+
+\begin{enumerate}
+    \item 
+(14 pts) Write a Python program with the following features:
+\begin{enumerate}
+    \item (2 pts) Generates a sequence of $n$ numbers in the range $[1, \ldots, n]$ and then randomly shuffles them.
+    \item (2 pts) Implements a $\theta(n^2)$ sorting routine that counts the number of flips in the array.
+    \item (5 pts) Implements a sorting routine with $\theta(n lg n)$ running time that counts the number of flips in the array. \textbf{Hint: Mergesort}
+    \item (5 pts) Run your code, both sorting algorithms, on values of $n$ from $[2, 2^2, 2^3, .... 2^{12}]$ and present your results in a table or labeled plot. Result with no supporting code will not get points. 
+\end{enumerate}
+Follow the naming convention for python code mentioned on Page 2.
+
+
+\pagebreak
+\begin{solution}
+Erase this before you answer - This space is NOT for the code but only for the table  or plot.
+\end{solution}
+
+\end{enumerate}
+\pagebreak
+
+
+
+\item (10 pts) Help the Mad Scientist calculate his h-index. According to Wikipedia: "A scientist has index $h$ if $h$ of their $N$ papers have at least $h$ citations each, and the other $N-h$ papers have no more than $h$ citations each."\\
+
+For this question, write a Python program that calculates the h-index for a given input array. The array contains the number of citations for $N$ papers, sorted in descending order (each citation is a non-negative integer). Your Python program needs to implement a divide and conquer algorithm that takes the $citations$ array as input to outputs the h-index.
+
+\textbf{Example:}\\
+\textbf{Input:} citations = [6,5,3,1,0]\\
+\textbf{Output:} 3 \\
+\textbf{Explanation:} [6,5,3,1,0] means the researcher has 5 papers with 6, 5, 3, 1, 0 citations respectively. Since the researcher has 3 papers with at least 3 citations each and the remaining two with no more than 3 citations each, the h-index is 3.
+\\\textbf{Note: }
+If there are several possible values for $h$, the maximum value is the h-index.\\
+\textbf{Hint: } Think how will you find it by a linear scan? You can then make your "search" more efficient.\\
+
+\textbf{Do not submit anything on the .pdf for this question.}\\
+Follow the naming convention for the python code mentioned on Page 2.
+\pagebreak
+
+
+\item (16 pts) Consider the following strategy for choosing a pivot element for the {\tt Partition} subroutine of QuickSort, applied to an array $A$.
+\begin{itemize}
+\item Let $n$ be the number of elements of the array $A$.
+\item If $n\leq 15$, perform an Insertion Sort of $A$ and return.
+\item Otherwise:
+	\begin{itemize}
+	\item Choose $2\lfloor \sqrt{n} \rfloor$ elements at random from $A$; let $S$ be the new list with the chosen elements.
+	\item Sort the list $S$ using Insertion Sort and store the median of $S$ as $m$.
+	\item Partition the sub-array of A using $m$ as a pivot.
+	\item Carry out QuickSort recursively on the two parts.
+	\end{itemize}
+\end{itemize}
+\begin{enumerate}
+\item (4 pts) Using the following array $A$ with $n=20$, show one iteration of this partitioning strategy on the array $$A=[34, 45, 32, 1, 23, 90, 12, 13, 43, 54, 65, 76, 67, 56, 45, 34, 44, 55, 23, 2]$$. Clearly identify all variables.\\
+\begin{solution}
+
+\end{solution}
+\pagebreak
+
+\item (4 pts) If the element $m$ obtained as the median of $S$ is used as the pivot, what can we say about the sizes of the two partitions of the array $A$? \textbf{Hint: Think about the best and worst possible selections for the values in S.}\\
+\begin{solution}
+
+\end{solution}
+
+\item (3 pts) How much time does it take to sort $S$ and find its median? Give a $\Theta$ bound.\\
+\begin{solution}
+
+\end{solution}
+
+\item (5 pts) Write a recurrence relation for the worst case running time of QuickSort with this pivoting strategy.\\
+\begin{solution}
+
+\end{solution}
+\end{enumerate}
+
+\item (10 pts extra credit) Implement the bottles and lids algorithm that you wrote in assignment 7a and show that it functions correctly on randomly generated arrays representing 100 bottles and lids. Your algorithm needs to use a divide and conquer strategy to receive credit for this question.
+
+
+    
+\end{enumerate}
+
+
+\end{document}
+
+
